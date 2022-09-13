@@ -36,8 +36,9 @@
             <h6 class="mb-0 selectable p-2 rounded">Houses</h6>
           </div>
         </div>
-        <div>
-          <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#rightBar" onclick="app.carsController.addCar()">🚗 Add Car</button>
+        <div id="button-change">
+          <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#rightBar"
+            onclick="app.carsController.addCar()">🚗 Add Car</button>
         </div>
       </div>
     </nav>
@@ -54,7 +55,7 @@
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="rightBar" aria-labelledby="rightBarLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="rightBarLabel">Edit Car</h5>
+      <h5 class="offcanvas-title text-uppercase" id="rightBarLabel"></h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body" id="forms">

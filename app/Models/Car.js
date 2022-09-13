@@ -36,7 +36,6 @@ export class Car {
     `
   }
 
-
   // TODO using an editable...
   /**@param {Car} [editable] */
   static getCarForm(editable) {
@@ -77,8 +76,8 @@ export class Car {
         </div>
 
         <div class="d-flex my-4 gap-5 align-items-center">
-          <button class="btn" type="reset">Cancel</button>
-          <button class="btn btn-primary" type="submit">${editable.id ? 'Save Changes' : 'Create'}</button>
+          <button class="btn text-uppercase" type="reset" data-bs-dismiss="offcanvas">Cancel</button>
+          <button class="btn btn-primary text-uppercase" type="submit">${editable.id ? 'Save Changes' : 'Create'}</button>
         </div>
       </form>
       `

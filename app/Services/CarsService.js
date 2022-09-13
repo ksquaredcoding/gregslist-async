@@ -43,6 +43,7 @@ class CarsService {
     // TODO simulate an error 
     await SandboxServer.delete(`/api/cars/${id}`)
     appState.cars = appState.cars.filter(c => c.id != id)
+    appState.emit('cars')
   }
 
   async getCars() {

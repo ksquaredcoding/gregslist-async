@@ -3,7 +3,8 @@ import { Car } from "../Models/Car.js"
 import { carsService } from "../Services/CarsService.js"
 import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js"
-import { setHTML } from "../Utils/Writer.js"
+import { setHTML, setText } from "../Utils/Writer.js"
+
 
 function drawCars() {
   let template = ''
@@ -30,8 +31,12 @@ export class CarsController {
 
 
   showCars() {
+    let template = /*html*/`
+    <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#rightBar" onclick="app.carsController.addCar()">🚗 Add Car</button>
+    `
     this.getCars()
     setHTML('forms', Car.getCarForm())
+    setHTML('button-change', template)
   }
 
   async handleSubmit() {
@@ -71,6 +76,7 @@ export class CarsController {
     appState.activeCar = null
     const template = Car.getCarForm()
     setHTML('forms', template)
+    setText('rightBarLabel', 'Add Car')
   }
 
   beginEdit(id) {
@@ -82,6 +88,7 @@ export class CarsController {
     const template = Car.getCarForm(editable)
 
     setHTML('forms', template)
+    setText('rightBarLabel', 'Edit Car')
   }
 
 
