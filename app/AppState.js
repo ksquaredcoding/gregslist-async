@@ -17,6 +17,10 @@ class AppState extends EventEmitter {
   jobs = []
   /** @type {import('./Models/Job').Job} */
   activeJob = null
+  /** @type {import('./Models/House').House[]} */
+  houses = []
+  /** @type {import('./Models/House').House} */
+  activeHouse = null
 }
 
 export const appState = new Proxy(new AppState(), {

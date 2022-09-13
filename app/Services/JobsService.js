@@ -10,8 +10,7 @@ class JobsService {
     const yes = Pop.confirm('Delete this job?')
     if (!yes) { return }
     await SandboxServer.delete(`/api/jobs/${id}`)
-    appState.jobs.filter(j => j.id !== id)
-    appState.emit('jobs')
+    appState.jobs = appState.jobs.filter(j => j.id !== id)
   }
   async addJob(formData) {
     const res = await SandboxServer.post('/api/jobs', formData)
